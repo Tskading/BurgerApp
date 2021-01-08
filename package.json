@@ -1,5 +1,5 @@
 {
-  "name": "BurgerApp",
+  "name": "burgerapp",
   "version": "1.0.0",
   "description": "Burger logger with MySQL, Node, Express, Handlebars and a homemade ORM, yum!",
   "main": "index.js",
