@@ -1,9 +1,34 @@
 <h1>BURGERS!</h1>
+    <ul>
+        {{#each burgers}}
+            
+            <li>{{burger_name}}</li>
+
+            <button class="eat-it" data-id="{{id}}" data-newdevoured="{{devoured}}">Eat it!</button>
+
+        {{/each}}
+    </ul>
 
 <h1>DEVOURED BURGERS!</h1>
 
+    <ul>
+        {{#each burgers}}
+        {{/each}}
+    </ul>
+
 <h2>ADD A BURGER!</h2>
 <form class= "create-form">
+
+    <div class="form-group">
+        <label for="burger">Burger Name:</label>
+        <input type="text" id="burger" name="name">
+    </div>
+
+    <div class="form-group">
+        <label for="devoured">Devoured!</label><br>
+        <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+        <input type="radio" name="devoured" value="0"> Burger
+    </div>
 
     <button type="submit">ADD BURGER!</button>
 </form>
