@@ -1,11 +1,10 @@
 <h1>BURGERS!</h1>
     <ul>
         {{#each burgers}}
-            
-            <li>{{burger_name}}</li>
-
-            <button class="eat-it" data-id="{{id}}" data-newdevoured="{{devoured}}">Eat it!</button>
-
+            {{#unless devoured}}
+                <li>{{burger_name}}</li>        
+                <button class="eat-it" data-id="{{id}}" data-devoured="{{devoured}}">Eat it!</button>
+            {{/unless}}
         {{/each}}
     </ul>
 
@@ -30,7 +29,7 @@
 
     <div class="form-group">
         <label for="devoured">Devoured!</label><br>
-        <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+        <input type="radio" name="devoured" value="1"> Devoured!<br>
         <input type="radio" name="burger" value="0"> Burger
     </div>
 

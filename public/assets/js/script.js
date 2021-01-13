@@ -1,11 +1,16 @@
 $(function() {
     $(".eat-it").on("click", function(event) {
         var id = $(this).data("id");
-        var newDevoured = $(this).data("newdevoured");
+        var newDevoured = $(this).data("devoured");
+            // function changeDevState(newDevoured) {
+            //     if(newDevoured == 0)
+            //     newDevoured = 1;
+            // };
         var newDevouredState = {
             devoured: newDevoured
         };
         
+        console.log(id);
         console.log(newDevoured);
         console.log(newDevouredState);
 
@@ -16,6 +21,8 @@ $(function() {
             console.log("changed devoured state to:", newDevoured);
             location.reload();
         });
+
+        // changeDevState();
     });
 
     $(".create-form").on("submit", function(event) {

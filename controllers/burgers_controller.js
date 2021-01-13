@@ -16,7 +16,7 @@ router.get("/", function(req, res) {
   });
 
   router.post("/api/burgers", function(req, res) {
-    burger.create(["burger_name", "devoured"], [req.body.name, req.body.devoured], function(result) {
+    burger.create(["burger_name", "devoured"], [req.body.name, false], function(result) {
       res.json({id: result.insertId});
 
       console.log(result);
@@ -26,9 +26,8 @@ router.get("/", function(req, res) {
   router.put("/api/burgers/:id", (req, res) => {
     var id = req.params.id;
 
-    burger.update([
-      req.body.devoured
-    ], id, (result) => {
+    burger.update({devoured: true}, {id: id}, result => {
+
       if (result.changedRows == 0) {
         return res.status(404).end();
       } else {
