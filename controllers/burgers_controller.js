@@ -16,8 +16,24 @@ router.get("/", function(req, res) {
   });
 
   router.post("/api/burgers", function(req, res) {
-    burger.create(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result) {
-      res.json({ id: result.insertId})
+    burger.create(["burger_name", "devoured"], [req.body.name, req.body.devoured], function(result) {
+      res.json({id: result.insertId});
+
+      console.log(result);
+    });
+  });
+
+  router.put("/api/burgers/:id", (req, res) => {
+    var id = req.params.id;
+
+    burger.update([
+      req.body.devoured
+    ], id, (result) => {
+      if (result.changedRows == 0) {
+        return res.status(404).end();
+      } else {
+        res.status(200).end();
+      }
     });
   });
 
