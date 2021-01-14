@@ -27,10 +27,11 @@ $(function() {
         var newBurger = {
             name: $("#burger").val().trim(),
            
-            devoured: $("#devoured").val()
+            devoured: $(".devID:checked").val()
         };
 
-        console.log("newBurger console log: " + newBurger);
+        console.log("newBurger console log: " + newBurger.name);
+        console.log("newBurger console log: " + newBurger.devoured);
 
         $.ajax("/api/burgers", {
             type: "POST",
