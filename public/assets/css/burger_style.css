@@ -1,0 +1,33 @@
+body {
+    cursor: not-allowed;
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(122deg, rgba(235, 213, 213, 0.71), rgba(30, 47, 204, 0.54));  
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+aside {
+    text-align: right;
+}
+
+aside ul {
+    direction: rtl;
+}
+
+main {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+

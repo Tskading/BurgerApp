@@ -2,10 +2,7 @@ $(function() {
     $(".eat-it").on("click", function(event) {
         var id = $(this).data("id");
         var newDevoured = $(this).data("devoured");
-            // function changeDevState(newDevoured) {
-            //     if(newDevoured == 0)
-            //     newDevoured = 1;
-            // };
+
         var newDevouredState = {
             devoured: newDevoured
         };
@@ -22,7 +19,6 @@ $(function() {
             location.reload();
         });
 
-        // changeDevState();
     });
 
     $(".create-form").on("submit", function(event) {
@@ -31,10 +27,10 @@ $(function() {
         var newBurger = {
             name: $("#burger").val().trim(),
            
-            // devoured: $("[name=devoured]: checked").val().trim()
+            devoured: $("#devoured").val()
         };
 
-        console.log(newBurger);
+        console.log("newBurger console log: " + newBurger);
 
         $.ajax("/api/burgers", {
             type: "POST",
